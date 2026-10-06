@@ -1,0 +1,261 @@
+/* Базовые общие стили */
+body {
+    background-color: #0d0d0d;
+    font-family: 'Arial', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    transition: background-color 0.5s ease;
+}
+
+.casino-container {
+    background-color: #1a1a1a;
+    padding: 30px;
+    border-radius: 15px;
+    text-align: center;
+    width: 450px;
+    transition: border 0.5s ease, box-shadow 0.5s ease;
+}
+
+/* --- ВАРИАНТЫ ТЕМАТИЧЕСКОГО ОФОРМЛЕНИЯ --- */
+
+/* 🔴 ТЕМА УКРАИНЫ: Черно-красные тона */
+body.theme-ukraine {
+    color: #fff;
+}
+body.theme-ukraine .casino-container {
+    border: 3px solid #ff0000;
+    box-shadow: 0 0 20px #ff0000;
+}
+body.theme-ukraine h1 {
+    color: #ff0000;
+    text-shadow: 0 0 10px #ff0000;
+}
+body.theme-ukraine #balance {
+    color: #ff3333;
+}
+body.theme-ukraine .main-btn, body.theme-ukraine .action-btn {
+    background-color: #990000;
+    border: 2px solid #ff0000;
+}
+body.theme-ukraine .main-btn:hover, body.theme-ukraine .action-btn:hover {
+    background-color: #ff0000;
+    box-shadow: 0 0 10px #ff0000;
+}
+body.theme-ukraine #bet-amount {
+    border: 1px solid #ff0000;
+}
+body.theme-ukraine .number-choice input[type="radio"] {
+    accent-color: #ff0000;
+}
+
+/* 🔵 ТЕМА ЕВРОПЫ: Черно-синие тона */
+body.theme-europe {
+    color: #fff;
+}
+body.theme-europe .casino-container {
+    border: 3px solid #003399;
+    box-shadow: 0 0 20px #003399;
+}
+body.theme-europe h1 {
+    color: #003399;
+    text-shadow: 0 0 10px #003399;
+}
+body.theme-europe #balance-eur {
+    color: #3388ff;
+}
+body.theme-europe .main-btn, body.theme-europe .action-btn {
+    background-color: #002266;
+    border: 2px solid #003399;
+}
+body.theme-europe .main-btn:hover, body.theme-europe .action-btn:hover {
+    background-color: #003399;
+    box-shadow: 0 0 10px #003399;
+}
+body.theme-europe #bet-amount-eur {
+    border: 1px solid #003399;
+    background-color: #222;
+    color: white;
+    padding: 8px;
+    border-radius: 4px;
+    width: 60%;
+    text-align: center;
+    font-size: 16px;
+}
+body.theme-europe .number-choice input[type="radio"] {
+    accent-color: #003399;
+}
+
+/* Стилизация меню и колонок */
+.menu-buttons {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 25px;
+    gap: 15px;
+}
+
+.menu-column {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    width: 45%;
+}
+
+/* Дополнительные мелкие кнопки (Перевод / В Европку) */
+.sub-btn {
+    background-color: #222;
+    color: #bbb;
+    border: 1px solid #444;
+    padding: 6px;
+    font-size: 13px;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: 0.2s;
+}
+.sub-btn:hover {
+    background-color: #333;
+    color: #fff;
+}
+.text-euro:hover {
+    border-color: #003399;
+    box-shadow: 0 0 5px #003399;
+}
+.text-ua {
+    border-color: #ff0000 !important;
+}
+
+/* Общие стили для контента */
+h1 {
+    font-size: 28px;
+    user-select: none;
+    margin-bottom: 25px;
+}
+
+.balance-container {
+    font-size: 22px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #333;
+    padding-bottom: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.game-section {
+    border-top: 1px solid #333;
+    padding-top: 20px;
+}
+
+.hidden {
+    display: none !important;
+}
+
+/* Стили кликера */
+.click-area {
+    position: relative;
+    width: 100%;
+    height: 150px;
+    background-color: #111;
+    border: 1px dashed #444;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+#target-click-btn {
+    position: absolute;
+    background-color: #fff;
+    color: black;
+    font-weight: bold;
+    border: none;
+    padding: 8px 12px;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: 0.1s ease-out;
+}
+body.theme-ukraine #target-click-btn { background-color: #ff0000; color: white; }
+
+/* Стили полей ввода */
+.bet-inputs {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    align-items: center;
+}
+
+#bet-amount {
+    background-color: #222;
+    color: white;
+    padding: 8px;
+    border-radius: 4px;
+    width: 60%;
+    text-align: center;
+    font-size: 16px;
+}
+
+.number-choice label {
+    margin: 0 10px;
+    cursor: pointer;
+    font-size: 18px;
+}
+
+#animation-zone, #animation-zone-eur {
+    margin-top: 15px;
+    font-size: 18px;
+    color: #ffcc00;
+    animation: blink 0.5s infinite alternate;
+}
+
+#result-display, #result-display-eur {
+    margin-top: 15px;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+/* --- СЕКРЕТНЫЕ ОВЕРЛЕИ ПАСХАЛОК --- */
+#ukraine-flag-overlay, #mellstroy-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    z-index: 9999;
+}
+#mellstroy-overlay { background-color: rgba(0, 0, 0, 0.95); z-index: 9998; justify-content: center; align-items: center; }
+#mellstroy-overlay img { max-width: 90%; max-height: 90%; border: 5px solid #ff0000; box-shadow: 0 0 30px #ff0000; border-radius: 10px; }
+
+.flag-blue { background-color: #0057B7; flex: 1; }
+.flag-yellow { background-color: #FFD700; flex: 1; }
+
+.hidden-flag, .hidden-mell { display: none !important; }
+
+@keyframes blink {
+    from { opacity: 0.5; }
+    to { opacity: 1; }
+}
+/* Стили для грозного текста ТЦК */
+#tck-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Центрирование ровно посередине экрана */
+    color: #ff0000;
+    font-size: 36px;
+    font-weight: bold;
+    text-align: center;
+    text-shadow: 3px 3px 0px #000, -3px -3px 0px #000, 3px -3px 0px #000, -3px 3px 0px #000; /* Черная обводка букв */
+    width: 80%;
+    z-index: 10000;
+    user-select: none;
+    font-family: 'Impact', 'Arial Black', sans-serif;
+    letter-spacing: 2px;
+}
+
+/* Скрытие текста по умолчанию */
+.hidden-tck {
+    display: none !important;
+}

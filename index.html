@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Казино Поносокакинское</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="theme-ukraine">
+
+    <div class="casino-container">
+        <!-- Главное меню с динамической пасхалкой при клике -->
+        <h1><span id="easter-egg-trigger" style="cursor: pointer;">🎰 Казино Поносокакинское 🎰</span></h1>
+        
+        <!-- Балансы -->
+        <div class="balance-container">
+            <div id="balance-uah-box">Баланс: <span id="balance">100.00</span> ₴</div>
+            <div id="balance-eur-box" class="hidden">Баланс: <span id="balance-eur">0.00</span> €</div>
+        </div>
+
+        <!-- Навигационные кнопки (Украина) -->
+        <div id="menu-ukraine" class="menu-buttons">
+            <div class="menu-column">
+                <button id="nav-farm-btn" class="main-btn">Копить</button>
+                <button id="nav-exchange-btn" class="sub-btn">Перевод</button>
+            </div>
+            <div class="menu-column">
+                <button id="nav-bet-btn" class="main-btn">Депнуть</button>
+                <button id="nav-euro-btn" class="sub-btn text-euro">В Европку</button>
+            </div>
+        </div>
+
+        <!-- Навигационные кнопки (Европка) -->
+        <div id="menu-europe" class="menu-buttons hidden">
+            <button id="nav-back-btn" class="main-btn text-ua">Вернуться в Украину</button>
+            <button id="nav-bet-eur-btn" class="main-btn">Депнуть</button>
+        </div>
+
+        <!-- Секция: Копить (Кликер - только в Украине) -->
+        <div id="section-farm" class="game-section hidden">
+            <h3>Поймай кнопку! (+0.1 ₴ за клик)</h3>
+            <div class="click-area">
+                <button id="target-click-btn">КЛИКНИ МЕНЯ!</button>
+            </div>
+        </div>
+
+        <!-- Секция: Депнуть в гривнах -->
+        <div id="section-bet" class="game-section hidden">
+            <h3>Сделай ставку в гривнах (₴)</h3>
+            <div class="bet-inputs">
+                <input type="number" id="bet-amount" placeholder="Сумма ставки (₴)" min="0.1" step="0.1">
+                <div class="number-choice">
+                    <label><input type="radio" name="user-number" value="1" checked> Цифра 1</label>
+                    <label><input type="radio" name="user-number" value="2"> Цифра 2</label>
+                    <label><input type="radio" name="user-number" value="3"> Цифра 3</label>
+                </div>
+                <button id="roll-btn" class="action-btn">Крутить колесо удачи</button>
+            </div>
+            <div id="animation-zone" class="hidden">🎰 Барабаны крутятся... 🎰</div>
+            <div id="result-display"></div>
+        </div>
+
+        <!-- Секция: Депнуть в евро -->
+        <div id="section-bet-eur" class="game-section hidden">
+            <h3>Сделай ставку в евро (€)</h3>
+            <p style="font-size: 13px; color: #555; margin-top: -10px;">Шанс выигрыша: 5% | Выплата: x15</p>
+            <div class="bet-inputs">
+                <input type="number" id="bet-amount-eur" placeholder="Сумма ставки (€)" min="0.01" step="0.01">
+                <div class="number-choice">
+                    <label><input type="radio" name="user-number-eur" value="1" checked> Цифра 1</label>
+                    <label><input type="radio" name="user-number-eur" value="2"> Цифра 2</label>
+                    <label><input type="radio" name="user-number-eur" value="3"> Цифра 3</label>
+                </div>
+                <button id="roll-eur-btn" class="action-btn">Испытать евро-удачу</button>
+            </div>
+            <div id="animation-zone-eur" class="hidden">🇪🇺 Расчет транзакции... 🇪🇺</div>
+            <div id="result-display-eur"></div>
+        </div>
+    </div>
+
+    <!-- Полноэкранный оверлей для флага Украины -->
+    <div id="ukraine-flag-overlay" class="hidden-flag">
+        <div class="flag-blue"></div>
+        <div class="flag-yellow"></div>
+        <!-- Блок для грозного текста ТЦК -->
+        <div id="tck-text" class="hidden-tck">ТЦК НАШЛА ВАС, ВАМ ПОРА ПОД МАЛУЮ ТОКМАЧКУ</div>
+    </div>
+
+    <!-- Полноэкранный оверлей для Мелстроя -->
+    <div id="mellstroy-overlay" class="hidden-mell">
+        <img src="mellstroy.jfif" alt="Mellstroy">
+    </div>
+
+    <!-- Плееры для музыки пасхалок -->
+    <audio id="anthem-audio" src="gimn.mp3" loop></audio>
+    <audio id="mellstroy-audio" src="burmalda.mp3" loop></audio>
+
+    <script src="script.js"></script>
+</body>
+</html>
